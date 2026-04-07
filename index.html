@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-MEDPL150 - Introduction to Medical Programming
-        </title>
+        <title>MEDPL150 - Introduction to Medical Programming</title>
         <link rel="stylesheet" href="styles.css">
     </head>
+
     <body>
 
         <p>
@@ -15,8 +14,12 @@ MEDPL150 - Introduction to Medical Programming
             Every project I take on is a step toward my bigger goals.  
         </p>
 
-
         <img src="images/headshot.JPG" width="400">
+
+        <h3>Kinley Wangchuk</h3>
+        <h3>kinley.wangchuk31@myhunter.cuny.edu</h3>
+        <h3>Hunter College</h3>
+        <h3>MEDPL15000</h3>
 
         <section><h2>Home works</h2></section>
 
@@ -36,5 +39,37 @@ MEDPL150 - Introduction to Medical Programming
         <section><h3><a href="reading3.html">Reading 3</a></h3></section>
         <section><h3><a href="reading4.html">Reading 4</a></h3></section>
         <section><h3><a href="reading5.html">Reading 5</a></h3></section>
+
+        <script>
+            const glow = document.createElement('div');
+            glow.className = 'cursor-glow';
+            document.body.appendChild(glow);
+
+            const root = document.documentElement;
+
+            document.addEventListener('mousemove', (e) => {
+                const cx = window.innerWidth  / 2;
+                const cy = window.innerHeight / 2;
+                const dx = (e.clientX - cx) / cx;
+                const dy = (e.clientY - cy) / cy;
+                const strength = 18;
+
+                root.style.setProperty('--px', (dx * strength) + 'px');
+                root.style.setProperty('--py', (dy * strength) + 'px');
+
+                const px = (e.clientX / window.innerWidth  * 100).toFixed(1) + '%';
+                const py = (e.clientY / window.innerHeight * 100).toFixed(1) + '%';
+                glow.style.background =
+                    `radial-gradient(ellipse 500px 400px at ${px} ${py}, rgba(0,255,247,0.07) 0%, transparent 70%)`;
+            });
+
+            document.addEventListener('mouseleave', () => {
+                root.style.setProperty('--px', '0px');
+                root.style.setProperty('--py', '0px');
+                glow.style.background =
+                    'radial-gradient(ellipse 500px 400px at 50% 50%, rgba(0,255,247,0.06) 0%, transparent 70%)';
+            });
+        </script>
+
     </body>
 </html>
