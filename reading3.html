@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="index.html"><button>Back</button></a>
+
+    <h1>Readings: Reflection Journal</h1>
+
+<h2>Reading 3 — Motherhood in Crisis: A Literary Analysis </h2>
+<br>
+
+<p>In Motherhood in Crisis by Laurence Ivil, Alicia Prager, and Saidu Bah, four women from Sierra Leone share their experiences with 
+    pregnancy and motherhood in a country where healthcare is severely limited. The graphic novel format makes these stories especially 
+    powerful, seeing the emotions on the women's faces creates a sense of closeness to experiences that might otherwise feel distant. 
+    Each story is different, but they all point to the same underlying argument: the dangers these women face are not inevitable, 
+    they are the result of systemic failures in healthcare, gender equality, and social support.</p>
+
+    <br>
+
+    <p>The first two stories focus on healthcare access and gender inequality. Memunatu suffers from unexplained bleeding after a 
+        stillbirth and goes undiagnosed until a community advocate connects her with a hospital, where she is finally treated for a 
+        fistula. Her story shows that even reaching medical care is a struggle when resources are scarce and doctors are few. 
+        Heela's story shifts to gender inequality, she is raped by an older man, becomes pregnant, and is forced to choose 
+        between the pregnancy and her education, while her attacker faces no consequences at all. Together, these two stories 
+        show how women bear the full weight of circumstances they did not create.</p>
+
+        <br>
+
+        <p>The final two stories deepen the novel's critique by adding social and institutional dimensions. Kadiatu loses five 
+            of her six children and faces community shame, with her neighbors accusing her of occult practices — a distrust rooted 
+            in trauma from the Ebola epidemic. Her eventual C-section represents a hard-won balance between tradition and modern 
+            medicine. Tetteh's story closes the novel on its most sobering note: imprisoned for killing her abuser, she is punished 
+            by the very system that should have protected her. Placing her story last feels intentional, by this point, the reader
+             understands that all four women are victims of the same interconnected failures, and that meaningful change requires
+              addressing not just healthcare, but justice and equality as a whole.</p>
+
+
+
+<script>
+            const glow = document.createElement('div');
+            glow.className = 'cursor-glow';
+            document.body.appendChild(glow);
+
+            const root = document.documentElement;
+
+            document.addEventListener('mousemove', (e) => {
+                const cx = window.innerWidth  / 2;
+                const cy = window.innerHeight / 2;
+                const dx = (e.clientX - cx) / cx;
+                const dy = (e.clientY - cy) / cy;
+                const strength = 18;
+
+                root.style.setProperty('--px', (dx * strength) + 'px');
+                root.style.setProperty('--py', (dy * strength) + 'px');
+
+                const px = (e.clientX / window.innerWidth  * 100).toFixed(1) + '%';
+                const py = (e.clientY / window.innerHeight * 100).toFixed(1) + '%';
+                glow.style.background =
+                    `radial-gradient(ellipse 500px 400px at ${px} ${py}, rgba(0,255,247,0.07) 0%, transparent 70%)`;
+            });
+
+            document.addEventListener('mouseleave', () => {
+                root.style.setProperty('--px', '0px');
+                root.style.setProperty('--py', '0px');
+                glow.style.background =
+                    'radial-gradient(ellipse 500px 400px at 50% 50%, rgba(0,255,247,0.06) 0%, transparent 70%)';
+            });
+        </script>
+
+</body>
+</html>
