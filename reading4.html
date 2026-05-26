@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="index.html"><button>Back</button></a>
+
+    <h1>Readings: Reflection Journal</h1>
+
+<h2>Reading 3 - Nuclear War: The Rising Risk, and How We Stop It</h2>
+
+<br>
+
+<p>The New York Times interactive article "Nuclear War: The Rising Risk, and How We Stop It" stood out to me because it made a topic that most people avoid thinking about feel impossible to ignore. The article breaks down how the threat of nuclear war has quietly grown more serious in recent years due to rising tensions between major powers like the United States, Russia, China, and North Korea. What surprised me most was learning that a nuclear conflict does not even have to be planned — it could start from a false alarm, a hacking incident, or a rushed decision made in under ten minutes. That idea alone made the article feel very unsettling in a way that stayed with me after I finished reading.</p>
+
+<br>
+
+<p>The article also challenges the idea of nuclear deterrence, which is the belief that countries will not attack each other because both sides would face total destruction. It raises the question of whether that system is still dependable given how much the world has changed. Reading that made me realize how much of global safety depends on trust and communication between governments, and how fragile that balance actually is. The writing never felt like it was just listing facts — it was building an argument that people need to start paying attention again.</p>
+
+<br>
+
+<p>The visual design of the article was just as powerful as the writing. From the moment the page loaded, the dark tones and flashing red imagery created an immediate feeling of tension and danger. The color red appeared throughout the article in a way that constantly reminded me of warnings, emergencies, and destruction. The animations and moving graphics made everything feel urgent, almost like watching a situation develop in real time rather than reading about a distant possibility. The scrolling experience was especially well done because each new section revealed information gradually, which kept me engaged and made the story feel like it was unfolding as I read.</p>
+
+<br>
+
+<p>The maps and timelines were also very effective because they showed the global scale of the threat. Seeing how quickly missiles travel and how little time decision makers actually have made the danger feel concrete rather than abstract. The design never felt cluttered or overdone — everything was focused and intentional, which matched the seriousness of the subject. Overall, this article showed me how powerful digital journalism can be when strong writing and smart design work together to make people feel something real.</p>
+
+<script>
+            const glow = document.createElement('div');
+            glow.className = 'cursor-glow';
+            document.body.appendChild(glow);
+
+            const root = document.documentElement;
+
+            document.addEventListener('mousemove', (e) => {
+                const cx = window.innerWidth  / 2;
+                const cy = window.innerHeight / 2;
+                const dx = (e.clientX - cx) / cx;
+                const dy = (e.clientY - cy) / cy;
+                const strength = 18;
+
+                root.style.setProperty('--px', (dx * strength) + 'px');
+                root.style.setProperty('--py', (dy * strength) + 'px');
+
+                const px = (e.clientX / window.innerWidth  * 100).toFixed(1) + '%';
+                const py = (e.clientY / window.innerHeight * 100).toFixed(1) + '%';
+                glow.style.background =
+                    `radial-gradient(ellipse 500px 400px at ${px} ${py}, rgba(0,255,247,0.07) 0%, transparent 70%)`;
+            });
+
+            document.addEventListener('mouseleave', () => {
+                root.style.setProperty('--px', '0px');
+                root.style.setProperty('--py', '0px');
+                glow.style.background =
+                    'radial-gradient(ellipse 500px 400px at 50% 50%, rgba(0,255,247,0.06) 0%, transparent 70%)';
+            });
+        </script>
+
+</body>
+</html>
