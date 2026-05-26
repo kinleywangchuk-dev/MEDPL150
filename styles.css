@@ -191,6 +191,10 @@ img {
   filter: saturate(1.1) contrast(1.05);
 }
 
+img.big {
+  width: 400px !important;
+  height: auto !important;
+}
 /* ── Back button ── */
 button {
   font-family: 'Orbitron', monospace;
