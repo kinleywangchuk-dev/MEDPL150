@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework 5</title>
+</head>
+<body>
+    <a href="index.html"><button>Back</button></a>
+
+    <h1>Eye GIF</h1>
+
+    <img src="images/eye_k.gif" width="800">
+
+
+
+    <h2>Reflection</h2>
+
+    <p>For this assignment, I created an animated GIF of a blinking eye to represent anger and inner conflict inspired by Anakin Skywalker from Star Wars. I chose the eye as my subject because it is one of the most powerful ways to communicate emotion without words — a slow, heavy blink can suggest someone holding back rage or on the edge of losing control, which is exactly who Anakin is as a character. Anakin spends his entire story fighting against his own emotions, from losing his mother to fearing the loss of Padmé, and his anger slowly builds until it consumes him completely. Each blink in my GIF represents that internal struggle, a moment where he tries to suppress what he feels but the emotion is always visible underneath. I wanted to isolate just the eye rather than a full face because anger is something people try to hide, and the eye is where that hiding fails. My GIF tries to capture that tension — the moment just before someone gives in to what they have been fighting against.</p>
+
+
+
+<script>
+            const glow = document.createElement('div');
+            glow.className = 'cursor-glow';
+            document.body.appendChild(glow);
+
+            const root = document.documentElement;
+
+            document.addEventListener('mousemove', (e) => {
+                const cx = window.innerWidth  / 2;
+                const cy = window.innerHeight / 2;
+                const dx = (e.clientX - cx) / cx;
+                const dy = (e.clientY - cy) / cy;
+                const strength = 18;
+
+                root.style.setProperty('--px', (dx * strength) + 'px');
+                root.style.setProperty('--py', (dy * strength) + 'px');
+
+                const px = (e.clientX / window.innerWidth  * 100).toFixed(1) + '%';
+                const py = (e.clientY / window.innerHeight * 100).toFixed(1) + '%';
+                glow.style.background =
+                    `radial-gradient(ellipse 500px 400px at ${px} ${py}, rgba(0,255,247,0.07) 0%, transparent 70%)`;
+            });
+
+            document.addEventListener('mouseleave', () => {
+                root.style.setProperty('--px', '0px');
+                root.style.setProperty('--py', '0px');
+                glow.style.background =
+                    'radial-gradient(ellipse 500px 400px at 50% 50%, rgba(0,255,247,0.06) 0%, transparent 70%)';
+            });
+        </script>
+
+</body>
+</html>
